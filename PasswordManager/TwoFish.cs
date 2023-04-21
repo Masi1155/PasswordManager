@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PasswordManager
+/*namespace PasswordManager
 {
     public class TwoFish
     {
@@ -19,4 +19,4 @@ namespace PasswordManager
             symmetricAlgorithm.
         }
     }
-}
+}*/

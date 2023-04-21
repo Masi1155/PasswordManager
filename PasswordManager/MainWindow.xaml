@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="Password Manager" Height="720" Width="1280">
+    <Grid Width="1280"  Height="720">
+        <Rectangle x:Name="BG_NavBar" HorizontalAlignment="Left" Height="720" Margin="0,-16,0,0"  VerticalAlignment="Top" Width="105" Fill="#FF1E2124"/>
+        <Rectangle x:Name="BG_MainWindow" HorizontalAlignment="Left" Height="720" Margin="105,-16,0,0" VerticalAlignment="Top" Width="1175" Fill="#FF32393E" Grid.ColumnSpan="2"/>
+        <Button Height="73" Margin="456,316,604,315" Width="73" Background="#00DDDDDD" BorderBrush="#00707070" Foreground="#00000000" Grid.Column="1"/>
+        <Image Source="/assets/menu-offnen.png" Margin="10,10,1184,622" />
     </Grid>
 </Window>
