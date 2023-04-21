@@ -8,7 +8,7 @@ namespace PasswordManager
 {
     internal class MARS
     {
-     String[]  Sbox = {
+     private uint[]  sBox = {
 0x09d0c479, 0x28c8ffe0, 0x84aa6c39, 0x9dad7287, 0x7dff9be3, 0xd4268361,
 0xc96da1d4, 0x7974cc93, 0x85d0582e, 0x2a4b5705, 0x1ca16a62, 0xc3bd279d,
 0x0f1f25e5, 0x5160372f, 0xc695c1fb, 0x4d7ff1e4, 0xae5f6bf4, 0x0d72ee46,
@@ -98,7 +98,7 @@ namespace PasswordManager
 };
         // Blocksize of 128 bit 
         // Divide into 4 x 32 bit words
-        private static uint[] ForwardMix(uint[] x, uint[] sBox)
+        private uint[] ForwardMix(uint[] x)
         {
             uint[] y = new uint[16];
 
