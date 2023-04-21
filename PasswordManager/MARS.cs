@@ -98,6 +98,7 @@ namespace PasswordManager
 };
         // Blocksize of 128 bit 
         // Divide into 4 x 32 bit words
+        // length of x = 4
         private uint[] ForwardMix(uint[] x)
         {
             uint[] y = new uint[16];
@@ -118,12 +119,17 @@ namespace PasswordManager
                 y[i] = sBox[y[i] & 0xFF] ^ ((sBox[(y[(i + 1) % 16] >> 8) & 0xFF] << 8) & 0xFFFF) ^ ((sBox[(y[(i + 2) % 16] >> 16) & 0xFF] << 16) & 0xFFFFFF) ^ ((sBox[(y[(i + 3) % 16] >> 24) & 0xFF] << 24) & 0xFFFFFFFF);
             }
 
+            // length of y = 16 
             return y;
         }
 
 
         public void CrypoCore()
         {
+            // 3 * 4
+            uint[] output = new uint[12];
+
+
             throw new NotImplementedException();
         }
         public void BackwardMixing() {
