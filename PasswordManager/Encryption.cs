@@ -8,5 +8,15 @@ namespace PasswordManager
 {
     internal class Encryption
     {
+        public Encryption()
+        {
+
+        }
+
+        public uint[] Chunking()
+        {
+
+            return new uint[4];
+        }
     }
 }
