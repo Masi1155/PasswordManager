@@ -5,12 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PasswordManager"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="720" d:DesignWidth="1280"
       Title="MainPage_">
 
     <Grid>
-        <Rectangle x:Name="BG_NavBar" HorizontalAlignment="Left" Height="720" Margin="0,-16,0,0"  VerticalAlignment="Top" Width="105" Fill="#FF1E2124" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Rectangle x:Name="BG_MainWindow" HorizontalAlignment="Left" Height="720" Margin="104,-16,0,0" VerticalAlignment="Top" Width="1176" Fill="#FF32393E"/>
+
+        <Rectangle x:Name="BG_NavBar" HorizontalAlignment="Left" Height="720"  VerticalAlignment="Top" Width="105" Fill="#FF1E2124"/>
+        <Rectangle x:Name="BG_MainWindow" HorizontalAlignment="Left" Height="720" Margin="104,0,0,0" VerticalAlignment="Top" Width="1176" Fill="#FF32393E"/>
         <Rectangle HorizontalAlignment="Left" Height="1" Margin="19,101,0,0" VerticalAlignment="Top" Width="73" Stroke="White" Grid.ColumnSpan="2"/>
         <Rectangle HorizontalAlignment="Left" Height="1" Margin="16,585,0,0" VerticalAlignment="Top" Width="74" Stroke="White"/>
         <Rectangle x:Name="Rect_MainMenu_IsActive" HorizontalAlignment="Left" Height="70" Margin="-6,14,0,0" Stroke="White" VerticalAlignment="Top" Width="10" RadiusY="5" RadiusX="5" Visibility="Visible" Fill="AliceBlue" />
@@ -18,14 +19,14 @@
         <Rectangle x:Name="Rect_Options_IsActive" HorizontalAlignment="Left" Height="70" Margin="-6,447,0,0" Stroke="White" VerticalAlignment="Top" Width="10" RadiusY="5" RadiusX="5" Fill="AliceBlue" Grid.Row="1" Visibility="Hidden" />
         <Label x:Name="Heading_MainMenu" Content="Main Menu" HorizontalAlignment="Left" Height="58" Margin="589,25,0,0" VerticalAlignment="Top" Width="202" Background="Transparent" Foreground="White" FontSize="36" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Left" Height="1" Margin="366,88,0,0" VerticalAlignment="Top" Width="648" Stroke="White"/>
-        <Button x:Name="Btn_OpenPwDb" Content="Open PW-DB" HorizontalAlignment="Left" Height="100" Margin="550,128,0,0" VerticalAlignment="Top" Width="280" Background="#FF7289DA" FontWeight="Bold" Foreground="White" FontSize="28" BorderBrush="#00707070">
+        <Button x:Name="Btn_OpenPwDb" Content="Open PW-DB" HorizontalAlignment="Left" Height="100" Margin="550,128,0,0" VerticalAlignment="Top" Width="280" Background="#FF7289DA" FontWeight="Bold" Foreground="White" FontSize="28" BorderBrush="#00707070" Click="Btn_OpenPwDb_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="30"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Btn_NewPwDb" Content="Create New PW-DB" HorizontalAlignment="Left" Height="100" Margin="552,260,0,0" VerticalAlignment="Top" Width="280" Background="#FF7289DA" FontWeight="Bold" Foreground="White" FontSize="28" BorderBrush="#00707070">
+        <Button x:Name="Btn_NewPwDb" Content="Create New PW-DB" HorizontalAlignment="Left" Height="100" Margin="552,260,0,0" VerticalAlignment="Top" Width="280" Background="#FF7289DA" FontWeight="Bold" Foreground="White" FontSize="28" BorderBrush="#00707070" Click="Btn_NewPwDb_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="30"/>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,18 @@ namespace PasswordManager
         private void Btn_Options_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new Options());
+        }
+
+        private void Btn_OpenPwDb_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+        }
+
+        private void Btn_NewPwDb_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.ShowDialog();
         }
     }
 }
