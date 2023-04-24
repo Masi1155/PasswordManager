@@ -14,33 +14,34 @@ namespace PasswordManager
         private byte[] bytesToEncrypt;
         private byte[] encryptedData;
         private byte[] decryptedData;
-        private byte[] pubKey;
-        private byte[] privKey;
 
         public RSA(string dataToEncrypt) { 
             DataStringToBytes(dataToEncrypt);
-            GetPrivKeyFromFile();
-            GetPubKeyFromFile();
         }
-        public void Encrypt() {
+        public byte[] Encrypt() {
             try
             {
                 using(RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
                     RSA.ImportParameters(RSA.ExportParameters(false));
+                    RSA.PersistKeyInCsp = false;
+                    RSA.FromXmlString(@"C:\Users\marcel.kunert\Desktop\PasswordManager\PasswordManager\pub_key.xml");
                     encryptedData = RSA.Encrypt(bytesToEncrypt, false);
                 }
             } catch(Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-            }           
+            }
+            return encryptedData;
         }
-        public void Decrypt() {
+        public byte[] Decrypt() {
             try
             {
                 using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
                     RSA.ImportParameters(RSA.ExportParameters(false));
+                    RSA.PersistKeyInCsp = false;
+                    RSA.FromXmlString(@"C:\Users\marcel.kunert\Desktop\PasswordManager\PasswordManager\priv_key.txt");
                     decryptedData = RSA.Decrypt(encryptedData, false);
                 }
             }
@@ -48,34 +49,12 @@ namespace PasswordManager
             {
                 Console.WriteLine(ex.ToString());
             }
+            return decryptedData;
         }
 
         private void DataStringToBytes(String dataToEncrypt) {
             UnicodeEncoding byteConverter = new();
             this.bytesToEncrypt= byteConverter.GetBytes(dataToEncrypt);
-        }
-
-        private void GetPubKeyFromFile(string path = @"C:\Users\marcel.kunert\Desktop\PasswordManager\PasswordManager\pub_key.txt") {
-            using(FileStream stream = new(path, FileMode.Open))
-            {
-                using (StreamReader sr = new(stream))
-                {
-                    string data = sr.ReadToEnd();
-                    UnicodeEncoding byteConverter = new();
-                    this.pubKey = byteConverter.GetBytes(data);
-                }
-            }
-        }
-        private void GetPrivKeyFromFile(String path = @"C:\Users\marcel.kunert\Desktop\PasswordManager\PasswordManager\priv_key.txt") {
-            using (FileStream stream = new(path, FileMode.Open))
-            {
-                using (StreamReader sr = new(stream))
-                {
-                    string data = sr.ReadToEnd();
-                    UnicodeEncoding byteConverter = new();
-                    this.privKey = byteConverter.GetBytes(data);
-                }
-            }
         }
     }
 }

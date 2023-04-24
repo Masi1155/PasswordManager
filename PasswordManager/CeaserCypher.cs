@@ -8,45 +8,34 @@ namespace PasswordManager
 {
     internal class CeaserCypher
     {
-        public void Cypher()
+        public static string VerschleusslungVonCeaser(int passLength, int schluessel)
         {
             string Capital = "QWERTZUIOPASDFGHJKLYXCVBNM";
             string Small = "qwertzuiopasdfghjklyxcvbnm";
             string Digits = "1234567890";
             string Special = "~`!@#$%^&*()-_+={}[]|/:;'<>,.?";
-            string all = Capital + Small + Digits + Special;
-            List<char> list = new List<char>();
-            List<int> zahl = new List<int>();
-            string pass = "";
-            string securityPass = "";
-            int schluessel = 3;
+            string all = Capital + Small + Digits + Special; // Hier werden alle Symbole gespeichert
+            List<int> zahl = new List<int>(); //Hier werden alle Positionen der Symbole die in Passwort verwendet werden, gespeichert 
+            string pass = ""; // Variable für nicht verschlüsseltes Passwort
+            string securityPass = ""; // Variable für verschlüsseltes Passwort
             Random rnd = new Random();
-            Console.WriteLine(all.Length);
-            for (int i = 0; i < all.Length; i++)
+
+            for (int i = 0; i < passLength; i++)
             {
-                list.Add(all[i]);
+                zahl.Add(rnd.Next(all.Length)); // Zufällige zahl von 0 bis 92(anzahl der Symbole) wird in Liste gespeichert
+                pass += all[zahl[i]]; // Symbol mit zufällige Position von oben wird in der Variable pass gespeichert
             }
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < passLength; i++)
             {
-                zahl.Add(rnd.Next(list.Count));
-                pass += list[zahl[i]];
-            }
-            Console.WriteLine(pass);
-
-            for (int i = 0; i < 8; i++)
-            {
-                if (zahl[i] + schluessel > all.Length)
+                int var = zahl[i] + schluessel;
+                while (var > all.Length)
                 {
-                    int var = (all.Length - (zahl[i] + schluessel)) * -1;
-                    securityPass += list[var - 1];
+                    var = (all.Length - (zahl[i] + schluessel)) * -1; // Unterschied wird gerechnet und positiv gesetzt
                 }
-                else
-                {
-                    securityPass += list[zahl[i] + schluessel];
-                }
+                securityPass += all[var];
             }
-            Console.WriteLine(securityPass);
+            return securityPass;
         }
     }
 }
