@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace PasswordManager
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaktionslogik für PasswordFolder.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PasswordFolder : Page
     {
-        public MainWindow()
+        public PasswordFolder()
         {
             InitializeComponent();
-        }
-
-        private void Btn_Quit_Click(object sender, RoutedEventArgs e)
-        {
-            System.Windows.Application.Current.Shutdown();
         }
     }
 }
