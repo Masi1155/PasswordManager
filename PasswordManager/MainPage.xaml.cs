@@ -15,11 +15,12 @@ using System.Windows.Shapes;
 
 namespace PasswordManager
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Interaktionslogik für MainPage_.xaml
+    /// </summary>
+    public partial class MainPage_ : Page
     {
-        private NavigationService navigationService;
-
-        public MainWindow()
+        public MainPage_()
         {
             InitializeComponent();
         }

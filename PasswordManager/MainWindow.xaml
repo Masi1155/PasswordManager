@@ -7,30 +7,40 @@
         mc:Ignorable="d"
         Title="Password Manager" Height="720" Width="1280">
     <Grid Width="1280"  Height="720">
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="4*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="17*"/>
-            <ColumnDefinition Width="303*"/>
-        </Grid.ColumnDefinitions>
         <Rectangle x:Name="BG_NavBar" HorizontalAlignment="Left" Height="720" Margin="0,-16,0,0"  VerticalAlignment="Top" Width="105" Fill="#FF1E2124" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Rectangle x:Name="BG_MainWindow" HorizontalAlignment="Left" Height="720" Margin="37,-16,0,0" VerticalAlignment="Top" Width="1175" Fill="#FF32393E" Grid.Column="1" Grid.RowSpan="2"/>
+        <Rectangle x:Name="BG_MainWindow" HorizontalAlignment="Left" Height="720" Margin="104,-16,0,0" VerticalAlignment="Top" Width="1176" Fill="#FF32393E"/>
         <Rectangle HorizontalAlignment="Left" Height="1" Margin="19,101,0,0" VerticalAlignment="Top" Width="73" Stroke="White" Grid.ColumnSpan="2"/>
-        <Rectangle HorizontalAlignment="Left" Height="1" Margin="16,420,0,0" VerticalAlignment="Top" Width="74" Stroke="White" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="16,585,0,0" VerticalAlignment="Top" Width="74" Stroke="White"/>
         <Rectangle x:Name="Rect_MainMenu_IsActive" HorizontalAlignment="Left" Height="70" Margin="-6,14,0,0" Stroke="White" VerticalAlignment="Top" Width="10" RadiusY="5" RadiusX="5" Visibility="Visible" Fill="AliceBlue" />
         <Rectangle x:Name="Rect_Folder_IsActive" HorizontalAlignment="Left" Height="70" Margin="-6,125,0,0" Stroke="White" VerticalAlignment="Top" Width="10" RadiusY="5" RadiusX="5" Fill="AliceBlue" Grid.RowSpan="2" Visibility="Hidden" />
         <Rectangle x:Name="Rect_Options_IsActive" HorizontalAlignment="Left" Height="70" Margin="-6,447,0,0" Stroke="White" VerticalAlignment="Top" Width="10" RadiusY="5" RadiusX="5" Fill="AliceBlue" Grid.Row="1" Visibility="Hidden" />
-        <Label x:Name="Heading_MainMenu" Grid.Column="1" Content="Main Menu" HorizontalAlignment="Left" Height="58" Margin="524,25,0,0" VerticalAlignment="Top" Width="202" Background="Transparent" Foreground="White" FontSize="36" FontWeight="Bold"/>
-        <Rectangle HorizontalAlignment="Left" Height="1" Margin="300,88,0,0" VerticalAlignment="Top" Width="648" Stroke="White" Grid.Column="1"/>
-        <Button x:Name="Btn_OpenPwDb" Grid.Column="1" Content="Open PW-DB" HorizontalAlignment="Left" Height="100" Margin="484,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="280" Background="#FF7289DA" FontWeight="Bold" Foreground="White" FontSize="28" BorderBrush="#00707070"/>
-        <Button x:Name="Btn_NewPwDb" Grid.Column="1" Content="Create New PW-DB" HorizontalAlignment="Left" Height="100" Margin="485,154,0,0" Grid.Row="1" VerticalAlignment="Top" Width="280" Background="#FF7289DA" FontWeight="Bold" Foreground="White" FontSize="28" BorderBrush="#00707070"/>
-        <Button x:Name="Btn_Quit" Grid.Column="1" Content="Quit" HorizontalAlignment="Left" Height="100" Margin="485,417,0,0" Grid.Row="1" VerticalAlignment="Top" Width="280" Background="#FF7289DA" FontWeight="Bold" Foreground="White" FontSize="28" BorderBrush="#00707070" Click="Btn_Quit_Click"/>
+        <Label x:Name="Heading_MainMenu" Content="Main Menu" HorizontalAlignment="Left" Height="58" Margin="589,25,0,0" VerticalAlignment="Top" Width="202" Background="Transparent" Foreground="White" FontSize="36" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="366,88,0,0" VerticalAlignment="Top" Width="648" Stroke="White"/>
+        <Button x:Name="Btn_OpenPwDb" Content="Open PW-DB" HorizontalAlignment="Left" Height="100" Margin="550,128,0,0" VerticalAlignment="Top" Width="280" Background="#FF7289DA" FontWeight="Bold" Foreground="White" FontSize="28" BorderBrush="#00707070">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="Btn_NewPwDb" Content="Create New PW-DB" HorizontalAlignment="Left" Height="100" Margin="552,260,0,0" VerticalAlignment="Top" Width="280" Background="#FF7289DA" FontWeight="Bold" Foreground="White" FontSize="28" BorderBrush="#00707070">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="Btn_Quit" Content="Quit" HorizontalAlignment="Left" Height="100" Margin="552,551,0,0" VerticalAlignment="Top" Width="280" Background="#FF7289DA" FontWeight="Bold" Foreground="White" FontSize="28" BorderBrush="#00707070" Click="Btn_Quit_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
 
         <Button x:Name="Btn_MainMenu" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="76" Margin="18,11,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}">
-            <Image Source="/assets/menu-offnen.png"/>
+            <Image Source="/assets/speisekarte.png"/>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="90"/>
@@ -46,8 +56,8 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Btn_AddFirstFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,115,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.RowSpan="2">
-            <Image Source="/assets/schaltflache-hinzufugen.png" Height="71"/>
+        <Button x:Name="Btn_AddFirstFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="74" Margin="19,115,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.RowSpan="2">
+            <Image Source="/assets/plus.png" Height="69"/>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="90"/>
@@ -64,7 +74,7 @@
             </Button.Resources>
         </Button>
         <Button x:Name="Btn_AddSecondFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,50,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
-            <Image Source="/assets/schaltflache-hinzufugen.png" Height="71"/>
+            <Image Source="/assets/plus.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="90"/>
@@ -81,7 +91,7 @@
             </Button.Resources>
         </Button>
         <Button x:Name="Btn_AddThirdFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,130,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
-            <Image Source="/assets/schaltflache-hinzufugen.png" Height="71"/>
+            <Image Source="/assets/plus.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="90"/>
@@ -98,7 +108,7 @@
             </Button.Resources>
         </Button>
         <Button x:Name="Btn_AddFourthFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,210,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
-            <Image Source="/assets/schaltflache-hinzufugen.png" Height="71"/>
+            <Image Source="/assets/plus.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="90"/>
@@ -115,7 +125,7 @@
             </Button.Resources>
         </Button>
         <Button x:Name="Btn_AddFithFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,60,0,0" VerticalAlignment="Center" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
-            <Image Source="/assets/schaltflache-hinzufugen.png" Height="71"/>
+            <Image Source="/assets/plus.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="90"/>
@@ -123,13 +133,14 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="Btn_Options" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="75" Margin="19,430,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1">
-            <Image Source="/assets/optionen.png" Height="71"/>
+        <Button x:Name="Btn_Options" HorizontalAlignment="Left" Height="75" Margin="16,601,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Click="Btn_Options_Click">
+            <Image Source="/assets/optionen.png"/>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="90"/>
                 </Style>
             </Button.Resources>
         </Button>
+        <Frame x:Name="frame"/>
     </Grid>
 </Window>
