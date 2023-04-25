@@ -15,7 +15,7 @@ namespace PasswordManager
 
         public Database()
         {
-
+            
         }
 
         public void SaveToFile()
@@ -26,13 +26,17 @@ namespace PasswordManager
                 xmlSerializer.Serialize(fs,this);
             }
         }
-        public Database LoadFromFile()
+        public static Database LoadFromFile(string path)
         {
-            using (FileStream fs = new(this.path, FileMode.Open))
+            using (FileStream fs = new(path, FileMode.Open))
             {
                 XmlSerializer xmlSerializer= new XmlSerializer(typeof(Database));
                 return (Database) xmlSerializer.Deserialize(fs);
             }
+        }
+        public void AddFolder()
+        {
+            folders.Add(new Folder());
         }
     }
 }

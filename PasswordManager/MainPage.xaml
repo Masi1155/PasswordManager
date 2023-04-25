@@ -40,8 +40,6 @@
                 </Style>
             </Button.Resources>
         </Button>
-
-
         <Button x:Name="Btn_MainMenu" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="76" Margin="18,11,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}">
             <Image Source="/assets/speisekarte.png"/>
             <Button.Resources>
@@ -51,7 +49,7 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="Btn_FirstFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,115,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.RowSpan="2" Visibility="Hidden">
+        <Button x:Name="Btn_FirstFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="15,115,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.RowSpan="2" Visibility="Hidden">
             <Image Source="/assets/ordner-offnen.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -59,7 +57,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Btn_AddFirstFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="74" Margin="19,115,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.RowSpan="2">
+        <Button x:Name="Btn_AddFirstFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="74" Margin="15,115,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.RowSpan="2" Click="Btn_AddFirstFolder_Click">
             <Image Source="/assets/plus.png" Height="69"/>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -68,7 +66,7 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="Btn_SecondFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,50,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
+        <Button x:Name="Btn_SecondFolder" HorizontalAlignment="Left" Height="68" Margin="15,195,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Visibility="Hidden">
             <Image Source="/assets/ordner-offnen.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -76,7 +74,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Btn_AddSecondFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,50,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
+        <Button x:Name="Btn_AddSecondFolder" HorizontalAlignment="Left" Height="75" Margin="15,195,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Visibility="Hidden" Click="Btn_AddSecondFolder_Click">
             <Image Source="/assets/plus.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -85,7 +83,7 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="Btn_ThirdFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,130,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
+        <Button x:Name="Btn_ThirdFolder" HorizontalAlignment="Left" Height="68" Margin="15,275,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Visibility="Hidden">
             <Image Source="/assets/ordner-offnen.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -93,7 +91,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Btn_AddThirdFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,130,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
+        <Button x:Name="Btn_AddThirdFolder" HorizontalAlignment="Left" Height="75" Margin="15,275,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Visibility="Hidden" Click="Btn_AddThirdFolder_Click">
             <Image Source="/assets/plus.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -102,7 +100,7 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="Btn_FourthFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,210,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
+        <Button x:Name="Btn_FourthFolder" HorizontalAlignment="Left" Height="68" Margin="15,355,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Visibility="Hidden">
             <Image Source="/assets/ordner-offnen.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -110,7 +108,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Btn_AddFourthFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,210,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
+        <Button x:Name="Btn_AddFourthFolder" HorizontalAlignment="Left" Height="75" Margin="15,355,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Visibility="Hidden" Click="Btn_AddFourthFolder_Click">
             <Image Source="/assets/plus.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -119,7 +117,7 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="Btn_FithFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,60,0,0" VerticalAlignment="Center" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
+        <Button x:Name="Btn_FifthFolder" HorizontalAlignment="Left" Height="68" Margin="15,435,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Visibility="Hidden">
             <Image Source="/assets/ordner-offnen.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -127,7 +125,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Btn_AddFithFolder" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="19,60,0,0" VerticalAlignment="Center" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Grid.Row="1" Visibility="Hidden">
+        <Button x:Name="Btn_AddFifthFolder" HorizontalAlignment="Left" Height="74" Margin="15,435,0,0" VerticalAlignment="Top" Width="74" Background="#00707070" BorderBrush="#00707070"  Foreground="{x:Null}" Visibility="Hidden" Click="Btn_AddFifthFolder_Click">
             <Image Source="/assets/plus.png" Height="71"/>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -144,6 +142,6 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Frame x:Name="frame"/>
+        <Frame x:Name="frame" Margin="0,1,0,-1" Grid.RowSpan="2"/>
     </Grid>
 </Page>

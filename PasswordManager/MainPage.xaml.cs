@@ -21,9 +21,11 @@ namespace PasswordManager
     /// </summary>
     public partial class MainPage_ : Page
     {
+
         public MainPage_()
         {
             InitializeComponent();
+            
         }
 
         private void Btn_Quit_Click(object sender, RoutedEventArgs e)
@@ -40,12 +42,47 @@ namespace PasswordManager
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.ShowDialog();
+            Database.LoadFromFile(openFileDialog.FileName);
         }
 
         private void Btn_NewPwDb_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.ShowDialog();
+        }
+
+        private void Btn_AddFirstFolder_Click(object sender, RoutedEventArgs e)
+        {
+            Btn_AddFirstFolder.Visibility = Visibility.Hidden;
+            Btn_FirstFolder.Visibility = Visibility.Visible;
+            Btn_AddSecondFolder.Visibility = Visibility.Visible;
+        }
+
+        private void Btn_AddSecondFolder_Click(Object sender, RoutedEventArgs e)
+        {
+            Btn_AddSecondFolder.Visibility = Visibility.Hidden;
+            Btn_SecondFolder.Visibility = Visibility.Visible;
+            Btn_AddThirdFolder.Visibility = Visibility.Visible;
+        }
+
+        private void Btn_AddThirdFolder_Click(Object sender, RoutedEventArgs e)
+        {
+            Btn_AddThirdFolder.Visibility = Visibility.Hidden;
+            Btn_ThirdFolder.Visibility = Visibility.Visible;
+            Btn_AddFourthFolder.Visibility = Visibility.Visible;
+        }
+
+        private void Btn_AddFourthFolder_Click(Object sender, RoutedEventArgs e)
+        {
+            Btn_AddFourthFolder.Visibility = Visibility.Hidden;
+            Btn_FourthFolder.Visibility = Visibility.Visible;
+            Btn_AddFifthFolder.Visibility = Visibility.Visible;
+        }
+
+        private void Btn_AddFifthFolder_Click(Object sender, RoutedEventArgs e)
+        {
+            Btn_AddFifthFolder.Visibility = Visibility.Hidden;
+            Btn_FifthFolder.Visibility = Visibility.Visible;
         }
     }
 }
