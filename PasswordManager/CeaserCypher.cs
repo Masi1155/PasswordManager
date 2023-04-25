@@ -8,7 +8,8 @@ namespace PasswordManager
 {
     internal class CeaserCypher
     {
-        public static string VerschleusslungVonCeaser(int passLength, int schluessel)
+        private string securityPass;
+        public string VerschleusslungVonCeaser(int passLength, int schluessel)
         {
             string Capital = "QWERTZUIOPASDFGHJKLYXCVBNM";
             string Small = "qwertzuiopasdfghjklyxcvbnm";
@@ -35,7 +36,12 @@ namespace PasswordManager
                 }
                 securityPass += all[var];
             }
-            return securityPass;
+            return this.securityPass = securityPass;
+        }
+
+        public override string ToString()
+        {
+            return this.securityPass;
         }
     }
 }

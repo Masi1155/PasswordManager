@@ -12,7 +12,7 @@ namespace PasswordManager
     internal class RSA
     {
         private byte[] bytesToEncrypt;
-        private byte[] encryptedData;
+        public byte[] encryptedData { get; private set; }
         private byte[] decryptedData;
 
         public RSA(string dataToEncrypt) { 
