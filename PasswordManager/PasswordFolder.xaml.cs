@@ -25,27 +25,12 @@ namespace PasswordManager
         {
             InitializeComponent();
             this.database = database;
-        }
-
-        private void AddFolderToDatabase()
-        {
-            if (database != null)
-            {
-                database.AddFolder();
-            }
-            else
-            {
-                MessageBox.Show("Please select or create a database first.");
-            }
+            getFolders();
         }
 
         private void Btn_MainMenu_Click(object sender, RoutedEventArgs e)
         {
-            if (this.database != null)
-            {
-                frame.NavigationService.Navigate(new MainPage_(this.database));
-            }
-            frame.NavigationService.Navigate(new MainPage_());
+            frame.NavigationService.Navigate(new MainPage_(this.database));
         }
 
         private void Btn_Options_Click(object sender, RoutedEventArgs e)
@@ -55,36 +40,32 @@ namespace PasswordManager
 
         private void Btn_AddFirstFolder_Click(object sender, RoutedEventArgs e)
         {
-            Btn_AddFirstFolder.Visibility = Visibility.Hidden;
-            Btn_FirstFolder.Visibility = Visibility.Visible;
-            Btn_AddSecondFolder.Visibility = Visibility.Visible;
+            AddFolderToDatabase();
+            getFolders();
         }
 
         private void Btn_AddSecondFolder_Click(Object sender, RoutedEventArgs e)
         {
-            Btn_AddSecondFolder.Visibility = Visibility.Hidden;
-            Btn_SecondFolder.Visibility = Visibility.Visible;
-            Btn_AddThirdFolder.Visibility = Visibility.Visible;
+            AddFolderToDatabase();
+            getFolders();
         }
 
         private void Btn_AddThirdFolder_Click(Object sender, RoutedEventArgs e)
         {
-            Btn_AddThirdFolder.Visibility = Visibility.Hidden;
-            Btn_ThirdFolder.Visibility = Visibility.Visible;
-            Btn_AddFourthFolder.Visibility = Visibility.Visible;
+            AddFolderToDatabase();
+            getFolders();
         }
 
         private void Btn_AddFourthFolder_Click(Object sender, RoutedEventArgs e)
         {
-            Btn_AddFourthFolder.Visibility = Visibility.Hidden;
-            Btn_FourthFolder.Visibility = Visibility.Visible;
-            Btn_AddFifthFolder.Visibility = Visibility.Visible;
+            AddFolderToDatabase();
+            getFolders();
         }
 
         private void Btn_AddFifthFolder_Click(Object sender, RoutedEventArgs e)
         {
-            Btn_AddFifthFolder.Visibility = Visibility.Hidden;
-            Btn_FifthFolder.Visibility = Visibility.Visible;
+            AddFolderToDatabase();
+            getFolders();
         }
 
         private void Btn_FirstFolder_Click(object sender, RoutedEventArgs e)
@@ -110,6 +91,87 @@ namespace PasswordManager
         private void Btn_FifthFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
+        }
+
+        private void AddFolderToDatabase()
+        {
+            if (database != null)
+            {
+                database.AddFolder();
+            }
+            else
+            {
+                MessageBox.Show("Please select or create a database first.");
+            }
+        }
+
+        public void getFolders()
+        {
+            if (database != null)
+            {
+                if (database.folders.Count == 1)
+                {
+                    resetFolderView();
+                    Btn_AddFirstFolder.Visibility = Visibility.Hidden;
+                    Btn_FirstFolder.Visibility = Visibility.Visible;
+                    Btn_AddSecondFolder.Visibility = Visibility.Visible;
+                }
+                else if (database.folders.Count == 2)
+                {
+                    resetFolderView();
+                    Btn_AddFirstFolder.Visibility = Visibility.Hidden;
+                    Btn_FirstFolder.Visibility = Visibility.Visible;
+                    Btn_SecondFolder.Visibility = Visibility.Visible;
+                    Btn_AddThirdFolder.Visibility = Visibility.Visible;
+
+                }
+                else if (database.folders.Count == 3)
+                {
+                    resetFolderView();
+                    Btn_AddFirstFolder.Visibility = Visibility.Hidden;
+                    Btn_FirstFolder.Visibility = Visibility.Visible;
+                    Btn_SecondFolder.Visibility = Visibility.Visible;
+                    Btn_ThirdFolder.Visibility = Visibility.Visible;
+                    Btn_AddFourthFolder.Visibility = Visibility.Visible;
+
+                }
+                else if (database.folders.Count == 4)
+                {
+                    resetFolderView();
+                    Btn_AddFirstFolder.Visibility = Visibility.Hidden;
+                    Btn_FirstFolder.Visibility = Visibility.Visible;
+                    Btn_SecondFolder.Visibility = Visibility.Visible;
+                    Btn_ThirdFolder.Visibility = Visibility.Visible;
+                    Btn_FourthFolder.Visibility = Visibility.Visible;
+                    Btn_AddFifthFolder.Visibility = Visibility.Visible;
+
+                }
+                else if (database.folders.Count == 5)
+                {
+                    resetFolderView();
+                    Btn_AddFirstFolder.Visibility = Visibility.Hidden;
+                    Btn_FirstFolder.Visibility = Visibility.Visible;
+                    Btn_SecondFolder.Visibility = Visibility.Visible;
+                    Btn_ThirdFolder.Visibility = Visibility.Visible;
+                    Btn_FourthFolder.Visibility = Visibility.Visible;
+                    Btn_FifthFolder.Visibility = Visibility.Visible;
+
+                }
+            }
+        }
+
+        public void resetFolderView()
+        {
+            Btn_FirstFolder.Visibility = Visibility.Hidden;
+            Btn_SecondFolder.Visibility = Visibility.Hidden;
+            Btn_ThirdFolder.Visibility = Visibility.Hidden;
+            Btn_FourthFolder.Visibility = Visibility.Hidden;
+            Btn_FifthFolder.Visibility = Visibility.Hidden;
+            Btn_AddFirstFolder.Visibility = Visibility.Visible;
+            Btn_AddSecondFolder.Visibility = Visibility.Hidden;
+            Btn_AddThirdFolder.Visibility = Visibility.Hidden;
+            Btn_AddFourthFolder.Visibility = Visibility.Hidden;
+            Btn_AddFifthFolder.Visibility = Visibility.Hidden;
         }
     }
 }

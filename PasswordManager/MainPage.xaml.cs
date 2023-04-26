@@ -31,6 +31,7 @@ namespace PasswordManager
         public MainPage_(Database database)
         {
             this.database = database;
+            InitializeComponent();
             getFolders();
         }
 
