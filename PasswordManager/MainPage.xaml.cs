@@ -21,6 +21,7 @@ namespace PasswordManager
     /// </summary>
     public partial class MainPage_ : Page
     {
+        private Database database;
 
         public MainPage_()
         {
@@ -42,13 +43,21 @@ namespace PasswordManager
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.ShowDialog();
-            Database.LoadFromFile(openFileDialog.FileName);
+            try
+            {
+                Database.LoadFromFile(openFileDialog.FileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Btn_NewPwDb_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.ShowDialog();
+            this.database = new();
         }
 
         private void Btn_AddFirstFolder_Click(object sender, RoutedEventArgs e)
@@ -56,6 +65,10 @@ namespace PasswordManager
             Btn_AddFirstFolder.Visibility = Visibility.Hidden;
             Btn_FirstFolder.Visibility = Visibility.Visible;
             Btn_AddSecondFolder.Visibility = Visibility.Visible;
+            if(database != null)
+            {
+                database.AddFolder();
+            }
         }
 
         private void Btn_AddSecondFolder_Click(Object sender, RoutedEventArgs e)
@@ -63,6 +76,10 @@ namespace PasswordManager
             Btn_AddSecondFolder.Visibility = Visibility.Hidden;
             Btn_SecondFolder.Visibility = Visibility.Visible;
             Btn_AddThirdFolder.Visibility = Visibility.Visible;
+            if (database != null)
+            {
+                database.AddFolder();
+            }
         }
 
         private void Btn_AddThirdFolder_Click(Object sender, RoutedEventArgs e)
@@ -70,6 +87,10 @@ namespace PasswordManager
             Btn_AddThirdFolder.Visibility = Visibility.Hidden;
             Btn_ThirdFolder.Visibility = Visibility.Visible;
             Btn_AddFourthFolder.Visibility = Visibility.Visible;
+            if (database != null)
+            {
+                database.AddFolder();
+            }
         }
 
         private void Btn_AddFourthFolder_Click(Object sender, RoutedEventArgs e)
@@ -77,12 +98,20 @@ namespace PasswordManager
             Btn_AddFourthFolder.Visibility = Visibility.Hidden;
             Btn_FourthFolder.Visibility = Visibility.Visible;
             Btn_AddFifthFolder.Visibility = Visibility.Visible;
+            if (database != null)
+            {
+                database.AddFolder();
+            }
         }
 
         private void Btn_AddFifthFolder_Click(Object sender, RoutedEventArgs e)
         {
             Btn_AddFifthFolder.Visibility = Visibility.Hidden;
             Btn_FifthFolder.Visibility = Visibility.Visible;
+            if (database != null)
+            {
+                database.AddFolder();
+            }
         }
     }
 }
