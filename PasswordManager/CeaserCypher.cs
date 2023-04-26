@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PasswordManager
 {
-    internal class CeaserCypher
+    public class CeaserCypher
     {
         private string securityPass;
         public string VerschleusslungVonCeaser(int passLength, int schluessel)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PasswordManager
 {
-    internal class Entry
+    public class Entry
     {
         public string Name { get; set; }
         public string Username { get; set; }

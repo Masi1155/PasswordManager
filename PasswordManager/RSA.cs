@@ -9,7 +9,7 @@ using System.Windows.Shapes;
 
 namespace PasswordManager
 {
-    internal class RSA
+    public class RSA
     {
         private byte[] bytesToEncrypt;
         public byte[] encryptedData { get; private set; }
