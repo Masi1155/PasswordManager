@@ -20,14 +20,27 @@ namespace PasswordManager
     /// </summary>
     public partial class PasswordFolder : Page
     {
+        private Database database;
         public PasswordFolder()
         {
             InitializeComponent();
         }
 
+        private void AddFolderToDatabase()
+        {
+            if (database != null)
+            {
+                database.AddFolder();
+            }
+            else
+            {
+                MessageBox.Show("Please select or create a database first.");
+            }
+        }
+
         private void Btn_Options_Click(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new Options());
+            frame.NavigationService.Navigate(new Options(this.database));
         }
 
         private void Btn_AddFirstFolder_Click(object sender, RoutedEventArgs e)

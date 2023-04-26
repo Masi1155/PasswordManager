@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PasswordManager
 {
-    internal class Folder
+    public class Folder
     {
         private List<Entry> entries = new List<Entry>();
         public Folder() { }

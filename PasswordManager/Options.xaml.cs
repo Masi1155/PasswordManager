@@ -21,9 +21,10 @@ namespace PasswordManager
     /// </summary>
     public partial class Options : Page
     {
-        private Database database;
-        public Options()
+        public Database database;
+        public Options(Database database)
         {
+            this.database = database;
             InitializeComponent();
         }
 

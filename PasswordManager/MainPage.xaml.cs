@@ -36,7 +36,7 @@ namespace PasswordManager
 
         private void Btn_Options_Click(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new Options());
+            frame.NavigationService.Navigate(new Options(this.database));
         }
 
         private void Btn_OpenPwDb_Click(object sender, RoutedEventArgs e)

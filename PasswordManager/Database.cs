@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace PasswordManager
 {
-    internal class Database
+    public class Database
     {
         public List<Folder> folders= new List<Folder>();
         public String path;
