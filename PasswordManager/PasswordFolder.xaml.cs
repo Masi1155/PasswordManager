@@ -21,9 +21,10 @@ namespace PasswordManager
     public partial class PasswordFolder : Page
     {
         private Database database;
-        public PasswordFolder()
+        public PasswordFolder(Database database)
         {
             InitializeComponent();
+            this.database = database;
         }
 
         private void AddFolderToDatabase()
