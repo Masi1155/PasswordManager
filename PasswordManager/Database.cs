@@ -10,7 +10,7 @@ namespace PasswordManager
 {
     public class Database
     {
-        public List<Folder> folders= new List<Folder>();
+        public List<Folder> folders= new();
         public String path;
 
         public Database()
@@ -26,7 +26,7 @@ namespace PasswordManager
         {
             using (FileStream fs = new(this.path, FileMode.OpenOrCreate))
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Database));
+                XmlSerializer xmlSerializer = new(typeof(Database));
                 xmlSerializer.Serialize(fs,this);
             }
         }
