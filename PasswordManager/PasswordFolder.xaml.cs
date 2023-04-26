@@ -23,6 +23,7 @@ namespace PasswordManager
         private Database database;
         public PasswordFolder(Database database)
         {
+            this.database = database;
             InitializeComponent();
             this.database = database;
         }

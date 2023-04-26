@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,8 +26,11 @@ namespace PasswordManager
 
         public MainPage_()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
+        }
+        public MainPage_(Database database)
+        {
+            this.database = database;
         }
 
         private void Btn_Quit_Click(object sender, RoutedEventArgs e)
@@ -49,7 +53,7 @@ namespace PasswordManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please select a valid file!");
             }
         }
 

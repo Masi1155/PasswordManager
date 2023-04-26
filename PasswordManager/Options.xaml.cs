@@ -30,7 +30,14 @@ namespace PasswordManager
 
         private void Btn_MainMenu_Click(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new MainPage_());
+            frame.NavigationService.Navigate(new MainPage_(this.database));
+            {
+                frame.NavigationService.GoBack();
+            }
+            else
+            {
+                frame.NavigationService.Navigate(new Uri("MainPage.xaml", UriKind.Relative));
+            }
         }
 
         private void Btn_AddFirstFolder_Click(object sender, RoutedEventArgs e)
