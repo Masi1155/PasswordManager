@@ -35,6 +35,7 @@ namespace PasswordManager
 
         private void Btn_Quit_Click(object sender, RoutedEventArgs e)
         {
+            database.SaveToFile();
             System.Windows.Application.Current.Shutdown();
         }
 
@@ -49,7 +50,7 @@ namespace PasswordManager
             openFileDialog.ShowDialog();
             try
             {
-                Database.LoadFromFile(openFileDialog.FileName);
+                this.database = Database.LoadFromFile(openFileDialog.FileName);
             }
             catch (Exception ex)
             {
@@ -61,7 +62,7 @@ namespace PasswordManager
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.ShowDialog();
-            this.database = new();
+            this.database = new(saveFileDialog.FileName);
         }
 
         private void Btn_AddFirstFolder_Click(object sender, RoutedEventArgs e)

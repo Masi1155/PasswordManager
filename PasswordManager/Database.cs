@@ -17,6 +17,10 @@ namespace PasswordManager
         {
             
         }
+        public Database(String path)
+        {
+            this.path = path;
+        }
 
         public void SaveToFile()
         {

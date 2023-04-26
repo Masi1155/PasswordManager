@@ -30,7 +30,11 @@ namespace PasswordManager
 
         private void Btn_MainMenu_Click(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new MainPage_(this.database));
+            if(this.database != null)
+            {
+                frame.NavigationService.Navigate(new MainPage_(this.database));
+            }
+            frame.NavigationService.Navigate(new MainPage_());
         }
 
         private void Btn_AddFirstFolder_Click(object sender, RoutedEventArgs e)
@@ -88,6 +92,14 @@ namespace PasswordManager
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.ShowDialog();
+            if(database != null)
+            {
+                this.database.path = saveFileDialog.FileName;
+            }
+            else
+            {
+                this.database = new(saveFileDialog.FileName);
+            }
         }
     }
 }
