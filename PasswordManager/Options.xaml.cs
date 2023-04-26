@@ -40,12 +40,6 @@ namespace PasswordManager
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.ShowDialog();
-        }
-
         private void Btn_AddFirstFolder_Click(object sender, RoutedEventArgs e)
         {
             Btn_AddFirstFolder.Visibility = Visibility.Hidden;
@@ -95,6 +89,12 @@ namespace PasswordManager
             {
                 MessageBox.Show("Please select or create a database first.");
             }
+        }
+
+        private void Button_SelcectPath_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.ShowDialog();
         }
     }
 }

@@ -129,7 +129,7 @@
 
         <Label x:Name="Label_PathInput" Content="Path:" HorizontalAlignment="Left" Margin="433,200,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" Width="88" Height="59"/>
         <Label x:Name="Label_EncMethod" Content="Encryption Method:" HorizontalAlignment="Left" Margin="200,300,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" Width="350" Height="59"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="575,200,0,0" VerticalAlignment="Top" Background="#FF1E2124" BorderBrush="#FF1E2124" Width="500" Height="59" Click="Button_Click">
+        <Button Content="" HorizontalAlignment="Left" Margin="575,200,0,0" VerticalAlignment="Top" Background="#FF1E2124" BorderBrush="#FF1E2124" Width="500" Height="59" Click="Button_SelcectPath_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="15"/>
