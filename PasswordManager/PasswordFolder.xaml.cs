@@ -39,6 +39,15 @@ namespace PasswordManager
             }
         }
 
+        private void Btn_MainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.database != null)
+            {
+                frame.NavigationService.Navigate(new MainPage_(this.database));
+            }
+            frame.NavigationService.Navigate(new MainPage_());
+        }
+
         private void Btn_Options_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new Options(this.database));
@@ -76,6 +85,31 @@ namespace PasswordManager
         {
             Btn_AddFifthFolder.Visibility = Visibility.Hidden;
             Btn_FifthFolder.Visibility = Visibility.Visible;
+        }
+
+        private void Btn_FirstFolder_Click(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new PasswordFolder(this.database));
+        }
+
+        private void Btn_SecondFolder_Click(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new PasswordFolder(this.database));
+        }
+
+        private void Btn_ThirdFolder_Click(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new PasswordFolder(this.database));
+        }
+
+        private void Btn_FourthFolder_Click(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new PasswordFolder(this.database));
+        }
+
+        private void Btn_FifthFolder_Click(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new PasswordFolder(this.database));
         }
     }
 }

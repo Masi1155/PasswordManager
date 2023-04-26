@@ -115,5 +115,30 @@ namespace PasswordManager
                 MessageBox.Show("Please select or create a database first.");
             }
         }
+
+        private void Btn_FirstFolder_Click(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new PasswordFolder(this.database));
+        }
+
+        private void Btn_SecondFolder_Click(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new PasswordFolder(this.database));
+        }
+
+        private void Btn_ThirdFolder_Click(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new PasswordFolder(this.database));
+        }
+
+        private void Btn_FourthFolder_Click(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new PasswordFolder(this.database));
+        }
+
+        private void Btn_FifthFolder_Click(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new PasswordFolder(this.database));
+        }
     }
 }
