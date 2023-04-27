@@ -22,12 +22,12 @@ namespace PasswordManager
     public partial class PasswordFolder : Page
     {
         private Database database;
-        private int currentfolder;
         public PasswordFolder(Database database)
         {
             InitializeComponent();
             this.database = database;
             getFolders();
+            updateFolder();
         }
 
         private void Btn_MainMenu_Click(object sender, RoutedEventArgs e)
@@ -44,60 +44,65 @@ namespace PasswordManager
         {
             AddFolderToDatabase();
             getFolders();
+            updateFolder();
         }
 
         private void Btn_AddSecondFolder_Click(Object sender, RoutedEventArgs e)
         {
             AddFolderToDatabase();
             getFolders();
+            updateFolder();
         }
 
         private void Btn_AddThirdFolder_Click(Object sender, RoutedEventArgs e)
         {
             AddFolderToDatabase();
             getFolders();
+            updateFolder();
         }
 
         private void Btn_AddFourthFolder_Click(Object sender, RoutedEventArgs e)
         {
             AddFolderToDatabase();
             getFolders();
+            updateFolder();
         }
 
         private void Btn_AddFifthFolder_Click(Object sender, RoutedEventArgs e)
         {
             AddFolderToDatabase();
             getFolders();
+            updateFolder();
         }
 
         private void Btn_FirstFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
-            this.currentfolder = 1;
+            database.currentFolder = 0;
         }
 
         private void Btn_SecondFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
-            this.currentfolder = 2;
+            database.currentFolder = 1;
         }
 
         private void Btn_ThirdFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
-            this.currentfolder = 3;
+            database.currentFolder = 2;
         }
 
         private void Btn_FourthFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
-            this.currentfolder = 4;
+            database.currentFolder = 3;
         }
 
         private void Btn_FifthFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
-            this.currentfolder = 5;
+            database.currentFolder = 4;
         }
 
         private void AddFolderToDatabase()
@@ -223,12 +228,103 @@ namespace PasswordManager
 
         private String Copy_Click(int buttonnum)
         {
-            return this.database.folders[currentfolder].entries[buttonnum].getPassword();
+            return this.database.folders[database.currentFolder].entries[buttonnum].getPassword();
         }
 
         private void Btn_OpenPwDb_Click(object sender, RoutedEventArgs e)
         {
+            database.folders[database.currentFolder].entries.Add(new Entry("test", "max_mustermann", "123456", "Https://HalloWelt.tv"));
+            updateFolder();
+        }
 
+        private void updateFolder()
+        {
+            clearEntries();
+            for(int i = 0; i < database.folders[database.currentFolder].entries.Count(); i++)
+            {
+                if (i == 0)
+                {
+                    TextBlock_Name_Row1.Text = database.folders[database.currentFolder].entries[i].Name;
+                    TextBlock_Username_Row1.Text = database.folders[database.currentFolder].entries[i].Username;
+                    TextBlock_Url_Row1.Text = database.folders[database.currentFolder].entries[i].url;
+                    Btn_Copy_Row1.Visibility = Visibility.Visible;
+                } else if (i == 1)
+                {
+                    TextBlock_Name_Row2.Text = database.folders[database.currentFolder].entries[i].Name;
+                    TextBlock_Username_Row2.Text = database.folders[database.currentFolder].entries[i].Username;
+                    TextBlock_Url_Row2.Text = database.folders[database.currentFolder].entries[i].url;
+                    Btn_Copy_Row2.Visibility = Visibility.Visible;
+                }
+                else if (i == 2)
+                {
+                    TextBlock_Name_Row3.Text = database.folders[database.currentFolder].entries[i].Name;
+                    TextBlock_Username_Row3.Text = database.folders[database.currentFolder].entries[i].Username;
+                    TextBlock_Url_Row3.Text = database.folders[database.currentFolder].entries[i].url;
+                    Btn_Copy_Row3.Visibility = Visibility.Visible;
+                }
+                else if (i == 3)
+                {
+                    TextBlock_Name_Row4.Text = database.folders[database.currentFolder].entries[i].Name;
+                    TextBlock_Username_Row4.Text = database.folders[database.currentFolder].entries[i].Username;
+                    TextBlock_Url_Row4.Text = database.folders[database.currentFolder].entries[i].url;
+                    Btn_Copy_Row4.Visibility = Visibility.Visible;
+                }
+                else if (i == 4)
+                {
+                    TextBlock_Name_Row5.Text = database.folders[database.currentFolder].entries[i].Name;
+                    TextBlock_Username_Row5.Text = database.folders[database.currentFolder].entries[i].Username;
+                    TextBlock_Url_Row5.Text = database.folders[database.currentFolder].entries[i].url;
+                    Btn_Copy_Row5.Visibility = Visibility.Visible;
+                }
+                else if (i == 5)
+                {
+                    TextBlock_Name_Row6.Text = database.folders[database.currentFolder].entries[i].Name;
+                    TextBlock_Username_Row6.Text = database.folders[database.currentFolder].entries[i].Username;
+                    TextBlock_Url_Row6.Text = database.folders[database.currentFolder].entries[i].url;
+                    Btn_Copy_Row6.Visibility = Visibility.Visible;
+                }
+                else if (i == 6)
+                {
+                    TextBlock_Name_Row7.Text = database.folders[database.currentFolder].entries[i].Name;
+                    TextBlock_Username_Row7.Text = database.folders[database.currentFolder].entries[i].Username;
+                    TextBlock_Url_Row7.Text = database.folders[database.currentFolder].entries[i].url;
+                    Btn_Copy_Row7.Visibility = Visibility.Visible;
+                }
+                else if (i == 7)
+                {
+                    TextBlock_Name_Row8.Text = database.folders[database.currentFolder].entries[i].Name;
+                    TextBlock_Username_Row8.Text = database.folders[database.currentFolder].entries[i].Username;
+                    TextBlock_Url_Row8.Text = database.folders[database.currentFolder].entries[i].url;
+                    Btn_Copy_Row8.Visibility = Visibility.Visible;
+                }
+            }
+        }
+        public void clearEntries()
+        {
+            TextBlock_Name_Row1.Text = "";
+            TextBlock_Name_Row2.Text = "";
+            TextBlock_Name_Row3.Text = "";
+            TextBlock_Name_Row4.Text = "";
+            TextBlock_Name_Row5.Text = "";
+            TextBlock_Name_Row6.Text = "";
+            TextBlock_Name_Row7.Text = "";
+            TextBlock_Name_Row8.Text = "";
+            TextBlock_Username_Row1.Text = "";
+            TextBlock_Username_Row2.Text = "";
+            TextBlock_Username_Row3.Text = "";
+            TextBlock_Username_Row4.Text = "";
+            TextBlock_Username_Row5.Text = "";
+            TextBlock_Username_Row6.Text = "";
+            TextBlock_Username_Row7.Text = "";
+            TextBlock_Username_Row8.Text = "";
+            TextBlock_Url_Row1.Text = "";
+            TextBlock_Url_Row2.Text = "";
+            TextBlock_Url_Row3.Text = "";
+            TextBlock_Url_Row4.Text = "";
+            TextBlock_Url_Row5.Text = "";
+            TextBlock_Url_Row6.Text = "";
+            TextBlock_Url_Row7.Text = "";
+            TextBlock_Url_Row8.Text = "";
         }
     }
 }

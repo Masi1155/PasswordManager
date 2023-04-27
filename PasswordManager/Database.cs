@@ -12,6 +12,7 @@ namespace PasswordManager
     {
         public List<Folder> folders= new();
         public String path;
+        public int currentFolder;
 
         public Database()
         {
