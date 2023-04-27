@@ -25,7 +25,7 @@ namespace PasswordManager
                 {
                     RSA.ImportParameters(RSA.ExportParameters(false));
                     RSA.PersistKeyInCsp = false;
-                    RSA.FromXmlString(@"C:\Users\marcel.kunert\Desktop\PasswordManager\PasswordManager\pub_key.xml");
+                    RSA.FromXmlString(@"..\..\..\pub_key.xml");
                     encryptedData = RSA.Encrypt(bytesToEncrypt, false);
                 }
             } catch(Exception ex)
@@ -35,19 +35,23 @@ namespace PasswordManager
             return encryptedData;
         }
         public byte[] Decrypt() {
+            if (encryptedData == null)
+            {
+                return bytesToEncrypt;
+            }
             try
             {
                 using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
                     RSA.ImportParameters(RSA.ExportParameters(false));
                     RSA.PersistKeyInCsp = false;
-                    RSA.FromXmlString(@"C:\Users\marcel.kunert\Desktop\PasswordManager\PasswordManager\priv_key.txt");
+                    RSA.FromXmlString(@"C:\Users\marcel.kunert\Desktop\PasswordManager\PasswordManager\private_xml.xml");
                     decryptedData = RSA.Decrypt(encryptedData, false);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                return encryptedData;
             }
             return decryptedData;
         }
