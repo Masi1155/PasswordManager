@@ -73,31 +73,31 @@ namespace PasswordManager
         private void Btn_FirstFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
-            this.currentfolder = 1;
+            this.currentfolder = 0;
         }
 
         private void Btn_SecondFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
-            this.currentfolder = 2;
+            this.currentfolder = 1;
         }
 
         private void Btn_ThirdFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
-            this.currentfolder = 3;
+            this.currentfolder = 2;
         }
 
         private void Btn_FourthFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
-            this.currentfolder = 4;
+            this.currentfolder = 3;
         }
 
         private void Btn_FifthFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
-            this.currentfolder = 5;
+            this.currentfolder = 4;
         }
 
         private void AddFolderToDatabase()
