@@ -173,6 +173,11 @@ namespace PasswordManager
             Btn_AddFourthFolder.Visibility = Visibility.Hidden;
             Btn_AddFifthFolder.Visibility = Visibility.Hidden;
         }
+
+        private void Btn_OpenPwDb_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 

@@ -53,6 +53,7 @@ namespace PasswordManager
             try
             {
                 this.database = Database.LoadFromFile(openFileDialog.FileName);
+                getFolders();
             }
             catch
             {
