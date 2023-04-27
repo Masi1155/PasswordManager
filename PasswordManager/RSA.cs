@@ -51,7 +51,7 @@ namespace PasswordManager
             }
             catch (Exception ex)
             {
-                return encryptedData;
+                return bytesToEncrypt;
             }
             return decryptedData;
         }
