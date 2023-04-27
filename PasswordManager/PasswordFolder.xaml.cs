@@ -188,42 +188,42 @@ namespace PasswordManager
 
         private void Btn_Copy_Row1_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetDataObject(Copy_Click(1), true);
+            Clipboard.SetDataObject(Copy_Click(0), true);
         }
 
         private void Btn_Copy_Row2_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetDataObject(Copy_Click(2), true);
+            Clipboard.SetDataObject(Copy_Click(1), true);
         }
 
         private void Btn_Copy_Row3_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetDataObject(Copy_Click(3), true);
+            Clipboard.SetDataObject(Copy_Click(2), true);
         }
 
         private void Btn_Copy_Row4_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetDataObject(Copy_Click(4), true);
+            Clipboard.SetDataObject(Copy_Click(3), true);
         }
 
         private void Btn_Copy_Row5_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetDataObject(Copy_Click(5), true);
+            Clipboard.SetDataObject(Copy_Click(4), true);
         }
 
         private void Btn_Copy_Row6_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetDataObject(Copy_Click(6), true);
+            Clipboard.SetDataObject(Copy_Click(5), true);
         }
 
         private void Btn_Copy_Row7_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetDataObject(Copy_Click(7), true);
+            Clipboard.SetDataObject(Copy_Click(6), true);
         }
 
         private void Btn_Copy_Row8_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetDataObject(Copy_Click(8), true);
+            Clipboard.SetDataObject(Copy_Click(7), true);
         }
 
         private String Copy_Click(int buttonnum)
