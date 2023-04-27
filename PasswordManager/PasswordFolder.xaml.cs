@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PasswordManager
 {
@@ -21,6 +22,7 @@ namespace PasswordManager
     public partial class PasswordFolder : Page
     {
         private Database database;
+        private int currentfolder;
         public PasswordFolder(Database database)
         {
             InitializeComponent();
@@ -71,26 +73,31 @@ namespace PasswordManager
         private void Btn_FirstFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
+            this.currentfolder = 1;
         }
 
         private void Btn_SecondFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
+            this.currentfolder = 2;
         }
 
         private void Btn_ThirdFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
+            this.currentfolder = 3;
         }
 
         private void Btn_FourthFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
+            this.currentfolder = 4;
         }
 
         private void Btn_FifthFolder_Click(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new PasswordFolder(this.database));
+            this.currentfolder = 5;
         }
 
         private void AddFolderToDatabase()
@@ -172,6 +179,51 @@ namespace PasswordManager
             Btn_AddThirdFolder.Visibility = Visibility.Hidden;
             Btn_AddFourthFolder.Visibility = Visibility.Hidden;
             Btn_AddFifthFolder.Visibility = Visibility.Hidden;
+        }
+
+        private void Btn_Copy_Row1_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetDataObject(Copy_Click(1), true);
+        }
+
+        private void Btn_Copy_Row2_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetDataObject(Copy_Click(2), true);
+        }
+
+        private void Btn_Copy_Row3_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetDataObject(Copy_Click(3), true);
+        }
+
+        private void Btn_Copy_Row4_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetDataObject(Copy_Click(4), true);
+        }
+
+        private void Btn_Copy_Row5_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetDataObject(Copy_Click(5), true);
+        }
+
+        private void Btn_Copy_Row6_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetDataObject(Copy_Click(6), true);
+        }
+
+        private void Btn_Copy_Row7_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetDataObject(Copy_Click(7), true);
+        }
+
+        private void Btn_Copy_Row8_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetDataObject(Copy_Click(8), true);
+        }
+
+        private String Copy_Click(int buttonnum)
+        {
+            return this.database.folders[currentfolder].entries[buttonnum].getPassword();
         }
 
         private void Btn_OpenPwDb_Click(object sender, RoutedEventArgs e)

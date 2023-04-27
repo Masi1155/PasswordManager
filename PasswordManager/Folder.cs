@@ -8,7 +8,7 @@ namespace PasswordManager
 {
     public class Folder
     {
-        private List<Entry> entries = new List<Entry>();
+        public List<Entry> entries = new List<Entry>();
         public Folder() { }
 
         public void EncryptEntires()
@@ -23,5 +23,7 @@ namespace PasswordManager
         {
             entries.Add(e);
         }
+
+        
     }
 }
